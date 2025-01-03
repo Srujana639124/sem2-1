@@ -1,0 +1,94 @@
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+\usepackage{tfrupee}
+\usepackage{amsmath, amssymb, amsfonts, amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\newcommand{\myvec}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{1-1.5-5}
+\author{EE24BTECH11042 - SRUJANA}
+{\let\newpage\relax\maketitle}
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\intextsep}{10pt} 
+
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\renewcommand{\thetable}{\theenumi}
+
+\textbf{QUESTION}:\\
+\[
+\frac{dy}{dx} = a \quad (a \in \mathbb{R}); \, y = 1 \text{ when } x = 0
+\]
+\textbf{Theoretical Solution}:\\
+\begin{align}
+   \frac{dy}{dx} &= \cos^{-1}(a) \\
+   y &= \cos^{-1}(a) \cdot x + C
+\end{align}
+By applying initial conditions , we can determine the constant\\
+\begin{align}
+    1 &= \cos^{-1}(a) \cdot 0 + C\\
+    C &= 1
+\end{align}
+
+The required solution is 
+\begin{align}
+    y &= \cos^{-1}(a) \cdot x +1
+\end{align}
+
+
+\textbf{Solution by finite differences method}\\
+
+The finite difference method is used to calculate the solutions of differential equations.\\
+
+\begin{align}
+    \frac{dy}{dx} &= \lim_{h \to 0}\frac{f(x+h)-f(x)}{h}\\
+    f(x+h) &= \frac{dy}{dx} \cdot h + f(x)
+\end{align}
+Substitute the initial conditions into the differential equation to find $\frac{dy}{dx}$ at those points. \\
+
+Assume $h = 0.01$, and calculate $f(x+h)$. \\
+
+Now, use $x+h$ and $f(x+h)$ as the new initial conditions. \\
+
+Repeat this process until you have sufficient points to plot the graph. \\
+
+Connect all the points to obtain an approximate plot of the differential equation. \\
+
+This is the graphical representation of both simulation and theoretical approaches \\
+
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=\columnwidth]{fig/combined_fig.jpg}
+\end{figure}
+
+
+\end{document}
+
